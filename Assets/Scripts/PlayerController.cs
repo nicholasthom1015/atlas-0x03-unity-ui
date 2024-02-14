@@ -1,12 +1,14 @@
 //using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; //Controls velocity multiplier
     private int score = 0;
-
+    public TMP_Text scoreText;
     public int health = 5;
     bool collision;
     
@@ -15,9 +17,15 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Pickup"))
         {
             score++;
-            Debug.Log("Score: " + score); //Displays score
+            SetScoreText();
+            //Debug.Log("Score: " + score); //Displays score
 
             Destroy(other.gameObject); //Removes coins when collected
+        }
+
+        void SetScoreText ()
+        {
+            scoreText.text = "Score: " + score;
         }
 
         if (other.CompareTag("Trap"))
