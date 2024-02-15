@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10f; //Controls velocity multiplier
     private int score = 0;
     public TMP_Text scoreText;
+    public TMP_Text healthText;
     public int health = 5;
     bool collision;
     
@@ -31,7 +32,13 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Trap"))
         {
             health--;
-            Debug.Log("Health: " + health); //Displays health
+            SetHealthText();
+            //Debug.Log("Health: " + health); //Displays health
+        }
+    
+        void SetHealthText()
+        {
+            healthText.text = "Health: " + health;
         }
     }
    Rigidbody rb; //Tells script there is a rigidbody, we can use variable rb to reference it in further script
