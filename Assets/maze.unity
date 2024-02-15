@@ -541,11 +541,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &67412918
@@ -1490,6 +1490,8 @@ MonoBehaviour:
   speed: 10
   scoreText: {fileID: 1134651999}
   healthText: {fileID: 1254087700}
+  WinLoseText: {fileID: 196765062}
+  WinLoseBG: {fileID: 1923024690}
   health: 5
 --- !u!1 &282877312
 GameObject:
